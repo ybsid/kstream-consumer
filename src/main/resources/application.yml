@@ -1,0 +1,41 @@
+server.port: 8090
+logging.level.com.ybsid.kafka.kstreamconsumer: INFO
+
+spring:
+  kafka:
+    enable.auto.commit: false
+    auto.commit.interval.ms: 6000
+    bootstrapServers: #url of boot-strap server(s)
+    errors.tolerance: all
+    acks: all
+
+    stream:
+      applicationId: kstream-consumer-001
+
+      properties:
+        security.protocol: "SSL"
+
+        #location of certificates for proprietary topics
+        ssl.truststore.location: #location of ssl certs file
+        ssl.keystore.location: #location of ssl certs file
+        ssl.truststore.password : #string truststore password
+        ssl.keystore.password: # string keystore password
+        ssl.key.password: # same as keystore password
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserialzer: org.apache.kafka.common.serialization.StringDeserializer
+
+      custom:
+        "[batch.size]": 1000012
+        "[default.api.timeout]": 90000
+
+    properties:
+      num.stream.threads: 1
+
+
+
+streams:
+  topicInfo:
+    topicName: #name of topic to consume from
+---
+#end of yml configs
+#if required add more properties as required
