@@ -60,7 +60,7 @@ public class ConsumerStream {
                     retryTemplate().execute(context -> {
                         retryCount[0]++;
 
-                        LOGGER.info("***********Retry Count : {}",retryCount[0],value);
+                        LOGGER.info("***********Retry Count : {}",retryCount[0]);
 
                         // TODO : call same processor method here
 

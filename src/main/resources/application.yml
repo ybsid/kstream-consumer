@@ -13,7 +13,7 @@ spring:
       applicationId: kstream-consumer-001
 
       properties:
-        security.protocol: "SSL"
+        security.protocol: "SSL" # not required if local development
 
         #location of certificates for proprietary topics
         ssl.truststore.location: #location of ssl certs file
@@ -23,6 +23,7 @@ spring:
         ssl.key.password: # same as keystore password
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserialzer: org.apache.kafka.common.serialization.StringDeserializer
+        state.dir: # state directory path
 
       custom:
         "[batch.size]": 1000012

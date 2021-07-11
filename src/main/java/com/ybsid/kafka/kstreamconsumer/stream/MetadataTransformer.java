@@ -38,7 +38,7 @@ public class MetadataTransformer implements TransformerSupplier<String,String, K
                            .toLocalDateTime()
                            .atZone(ZoneId.of("Asia/Kolkata")).toString();
 
-                   LOGGER.info("Meta-Data of topic : Partition :{} , offset : {} ,  topic : {} and timestamp : "
+                   LOGGER.info("Meta-Data of topic : Partition :{} , offset : {} ,  topic : {} and timestamp : {}"
                            , partition,offset , topic , time);
 
                    processorContext.commit();
